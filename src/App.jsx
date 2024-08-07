@@ -1,12 +1,22 @@
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import BooksPage from './pages/BooksPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
-function App() {
 
+const App = () => {
   return (
-    <>
-      <h1>Projeto LibraryTech</h1>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/livros" element={<BooksPage />} />
+        </Route>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

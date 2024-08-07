@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #5D4037;
+    --secondary-color: #D7CCC8;
+    --accent-color: #FF9800;
+    --text-color: #212121;
+    --background-color: #EFEBE9;
+    --card-color: #FFFFFF;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: var(--card-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: var(--accent-color);
+  }
+  
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .book-card {
+    background-color: var(--card-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .book-info {
+    padding: 15px;
+  }
+  
+  .book-title {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+  }
+  
+  .book-author {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 10px 0;
+  }
+  
+  .exchange-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .exchange-btn:hover {
+    background-color: #F57C00;
+  }
+  
+  footer {
+    background-color: var(--primary-color);
+    color: var(--card-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .book-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
